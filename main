@@ -1,0 +1,49 @@
+#include <16F877A.h>		//indica el microcontrolador con el que trabajara
+#fuses XT, NOWDT, PUT, NODEBUG, NOBROWNOUT, NOPROTECT, NOLVP, NOWRT		//fuses inicializados
+#use delay(clock=4000000)		//velocidad a la que trabajaran los ciclo del programa
+#use fast_io(b) 		//directiva para que puedan trabajar conrrectamente las funciones output_low y output_high
+
+void main(void){		//inicio del programa
+
+int cont = 1;  //contador del ciclo while para que siempre haga el mismo proceso
+
+while(cont > 0){
+	set_tris_b(0x00);
+
+	output_high(PIN_B0);		// bit menos significativo = 1
+	delay_ms(1000);			// retardo de 1seg
+	output_low(PIN_B0);		// bit menos significativo = 0
+
+	output_high(PIN_B1);
+	delay_ms(1000);
+	output_low(PIN_B1);
+
+	output_high(PIN_B2);
+	delay_ms(1000);
+	output_low(PIN_B2);
+
+	output_high(PIN_B3);
+	delay_ms(1000);
+	output_low(PIN_B3);
+	
+	output_high(PIN_B4);
+	delay_ms(1000);
+	output_low(PIN_B4);
+	
+	output_high(PIN_B5);
+	delay_ms(1000);
+	output_low(PIN_B5);
+
+	output_high(PIN_B6);
+	delay_ms(1000);
+	output_low(PIN_B6);
+
+	output_high(PIN_B7);
+	delay_ms(1000);
+	output_low(PIN_B7);
+}	
+delay_ms(1000);
+}
+
+
+
